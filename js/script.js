@@ -81,13 +81,19 @@ function cooker(){
 
         UpdateDisplay();
     }
-const makePurchase = document.getElementById('makePurchase');
-    function purchase() {
+
+   
+
+    const makePurchase = document.getElementById('makePurchase');
+   
+    function toggleModal() { 
+       
         if (totalPrice>0) {
             makePurchase.classList.add('bg-green-600'); 
+            document.getElementById('modal').classList.toggle('hidden')
         } else {
             makePurchase.classList.add('bg-red-600'); 
+           
         }
-        
     }
 
