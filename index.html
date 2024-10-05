@@ -9,14 +9,14 @@
 </head>
 <body>
     <header>
-        <div class="hero bg-[#f9f6e2] h-[600px]">
-            <div class="hero-content flex-col lg:flex-row-reverse gap-24">
+        <div class="hero bg-[#f9f6e2] h-[600px] pb-5 lg:pb-0">
+            <div class="hero-content flex-col lg:flex-row-reverse xl:gap-24 md:gap-10 gap-5">
               <img
                 src="images/Summer 1.png"
-                class="max-w-sm rounded-lg" />
+                class="lg:w-2/5 md:w-2/6  rounded-lg" />
               <div>
                 <h1 class="text-center">---SALE FEVER---</h1>
-                <p class="py-6 text-5xl font-bold">
+                <p class="xl:py-6 py-3 xl:text-5xl text-2xl font-bold">
                     Purchase TK 200 or <br> above & <span class="text-[#e527b2]">get 20% off</span> 
                 </p>
                 <div class="flex text-center justify-center gap-2 items-center">
@@ -31,14 +31,15 @@
     </header>
     <main>
         <section class="mx-auto px-5">
-           <div class="flex">
+           <div class="flex flex-col xl:flex-row">
             <div class="flex-1">
+              
                 <div class="p-5">
-                    <h1 class="text-4xl font-bold">Kitchenware</h1>
-                    <div class="p-5 grid grid-cols-3 gap-5">
+                  <h1 class="text-4xl font-bold">Kitchenware</h1>
+                    <div class="p-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                         <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod1.png"
                                 alt="kitchen" />
                             </figure>
@@ -62,7 +63,7 @@
                           </div>
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod2.png"
                                 alt="kitchen" />
                             </figure>
@@ -87,7 +88,7 @@
     
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod3.png"
                                 alt="kitchen" />
                             </figure>
@@ -105,7 +106,7 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                                 
                               </div>
-                              <p onclick="cooker()">39.00 TK</p>
+                              <p onclick="cooker()" id="cookerId">99.00 TK</p>
                               
                             </div>
                           </div>
@@ -117,10 +118,10 @@
 
                 <div class="p-5">
                     <h1 class="text-4xl font-bold">Sportswear</h1>
-                    <div class="p-5 grid grid-cols-3 gap-5">
+                    <div class="p-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                         <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod4.png"
                                 alt="kitchen" />
                             </figure>
@@ -138,13 +139,13 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                                 
                               </div>
-                              <p onclick="jersey()">39.00 TK</p>
+                              <p onclick="jersey()" id="jerseyId">39.00 TK</p>
                               
                             </div>
                           </div>
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod5.png"
                                 alt="kitchen" />
                             </figure>
@@ -162,14 +163,14 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                                 
                               </div>
-                              <p onclick="sportsBackCap()">39.00 TK</p>
+                              <p onclick="sportsBackCap()" id="sportsBackCapId">39.00 TK</p>
                               
                             </div>
                           </div>
     
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod6.png"
                                 alt="kitchen" />
                             </figure>
@@ -187,7 +188,7 @@
                                 <input type="radio" name="rating-2" class="mask mask-star-2 bg-[#ffc107]" />
                                 
                               </div>
-                              <p onclick="sportsCates()">39.00 TK</p>
+                              <p onclick="sportsCates()" id="sportsId">300.00 TK</p>
                               
                             </div>
                           </div>
@@ -204,10 +205,10 @@
 
                 <div class="p-5">
                     <h1 class="text-4xl font-bold">Furniture</h1>
-                    <div class="p-5 grid grid-cols-3 gap-5">
+                    <div class="p-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5">
                         <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod7.png"
                                 alt="kitchen" />
                             </figure>
@@ -231,7 +232,7 @@
                           </div>
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod8.png"
                                 alt="kitchen" />
                             </figure>
@@ -256,7 +257,7 @@
     
                           <div class="card card-compact bg-base-100 shadow-xl">
                             <figure>
-                              <img class="bg-[#1111110c] px-20 py-10"
+                              <img class="bg-[#1111110c] md:px-20 px-5 md:py-10 py-3"
                                 src="images/prod9.png"
                                 alt="kitchen" />
                             </figure>
@@ -285,8 +286,8 @@
             <div class="py-10 pt-16">
                 <div class="shadow-md p-5">
                     <p class="font-bold span-y-5 mb-2">Have coupon?</p>
-                   <div class="flex gap-0 border 2px solid">
-                    <input id="searchText" type="text" placeholder="Coupon code" class="p-2"> 
+                   <div class="flex gap-0">
+                    <input id="searchText" type="text" placeholder="Coupon code" class="p-2 border 2px solid w-3/4"> 
                     <button class="btn rounded-none  bg-[#e527b2] text-white" id="applyBtn" onclick="applyClick()">Apply</button>
                    </div>
                 </div>
@@ -336,7 +337,7 @@
                   
                   <div class="bg-pink-200 px-4 py-3 text-center">
                     <button type="button" class="py-2 px-4 bg-purple-500 text-white rounded hover:bg-pink-700 mr-2" onclick="toggleModal()"><i class="fas fa-times"></i> Cancel</button>
-                    <button type="button" onclick="window.location.href='index.html'" class="py-2 px-4  bg-[#e527b2] text-white rounded font-medium hover:bg-purple-500 mr-2 transition duration-500"><i class="fas fa-plus"></i> 
+                    <button type="button" onclick="window.location.href = 'index.html';" class="py-2 px-4  bg-[#e527b2] text-white rounded font-medium hover:bg-purple-500 mr-2 transition duration-500"><i class="fas fa-plus"></i> 
                      Go Home
                     </button>
                   </div>

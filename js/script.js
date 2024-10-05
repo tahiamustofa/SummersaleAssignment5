@@ -18,82 +18,83 @@ function accessories() {
 function cooker(){
     const cooker= document.getElementById('cooker');
     const cookerName = cooker.innerText;
-    addName(cookerName); 
+    const cookerId= document.getElementById('cookerId');
+    const cookerPrice = parseFloat(cookerId.innerText);
+    addName(cookerName,cookerPrice); 
     }
 
     function sportsBackCap() {
         const sportsBackCap = document.getElementById('sportsBackCap');
         const sportsBackCapName = sportsBackCap.innerText;
-        addName(sportsBackCapName); 
+        const sportsBackCapId = document.getElementById('sportsBackCapId');
+        const sportsBackCapPrice = parseFloat(sportsBackCapId.innerText);
+        addName(sportsBackCapName,sportsBackCapPrice); 
     }
 
     function jersey() {
       const jersey = document.getElementById('jersey');
       const jerseyName = jersey.innerText;
-      addName(jerseyName); 
+      const jerseyId = document.getElementById('jerseyId');
+      const jerseyPrice = parseFloat(jerseyId.innerText);
+      addName(jerseyName,jerseyPrice); 
     }
     function sportsCates() {
        const sportsCates= document.getElementById('sportsCates');
        const  sportsCatesName =sportsCates.innerText;
-       addName(sportsCatesName); 
+       const sportsId= document.getElementById('sportsId');
+       const  sportsPrice = parseFloat(sportsId.innerText);
+       addName(sportsCatesName, sportsPrice); 
     }
+    
+      let totalPrice = 0;
+      let discountAmont = 0;
 
-    let totalPrice = 0;
-    let discountAmount = 0;
-    function addName(productName,price) {
+    function addName(name,price) {
         const makeProduct = document.getElementById('makeProduct');
-        const count = makeProduct.childElementCount;
+        const count = makeProduct.childElementCount;  
         const p = document.createElement('p');
-        p.innerHTML = `${count+1}.  ${productName}`;
+        p.innerHTML = `${count+1}. ${name}`;
+         
         makeProduct.appendChild(p);
 
-        totalPrice += price;
-        UpdateDisplay();
+        totalPrice = totalPrice + price; 
+        UpdateDisplay()
         
     }
 
-    function UpdateDisplay() {
-        const currentTotal = document.getElementById('currentTotal');
-        currentTotal.innerHTML = `${totalPrice.toFixed(2)}`; 
-        const discountDisplay= document.getElementById('discount');
-        discountDisplay.innerHTML = discountAmount.toFixed(2);
-         console.log(discountDisplay);
-        const finalTotal= document.getElementById('finalTotal');
-        finalTotal.innerHTML = (totalPrice - discountAmount).toFixed(2);
-        
-        
+    function UpdateDisplay(){
+     const currentTotal = document.getElementById('currentTotal');
+     currentTotal.innerText = `${totalPrice.toFixed(2)}`;
+     const discount= document.getElementById('discount');
+     discount.innerText = discountAmont.toFixed(2);
+     const finalTotal= document.getElementById('finalTotal');
+     finalTotal.innerText = (totalPrice - discountAmont).toFixed(2);
     }
     
-    function applyClick(){
-        const cuponText = document.getElementById('searchText');
-    const cupon= cuponText.value;
     
-    const applyBtn = document.getElementById('applyBtn');
-        if (cupon === 'SELL200' && totalPrice>=200) {
-            discountAmount = totalPrice*0.20;
-            alert('you got the discount!');
-            applyBtn.classList.add('bg-green-600');
-        } else {
-            discountAmount = 0;
-            applyBtn.classList.add('cursor-not-allowed');
-            applyBtn.classList.add('bg-red-600');
-        }
+    function applyClick() {
+      const cuponCode = document.getElementById('searchText');
+      const cupon= cuponCode.value; 
+      const applyBtn= document.getElementById('applyBtn');
 
-        UpdateDisplay();
-    }
-
-   
-
-    const makePurchase = document.getElementById('makePurchase');
-   
-    function toggleModal() { 
+      if (cupon === 'SELL200' && totalPrice >= 200) {
+         discountAmont=totalPrice*0.20;
+        applyBtn.classList.add('bg-green-500');
+      } else {
+        discountAmont=0;
+        applyBtn.classList.add('bg-red-500');
         
-        if (totalPrice>0) {
-            makePurchase.classList.add('bg-green-600'); 
-            document.getElementById('modal').classList.toggle('hidden')
-            
-        } else {
-            makePurchase.classList.add('bg-red-600'); 
-           
-        }
+      }
+      UpdateDisplay();
+
     }
+
+function toggleModal(){
+  const makePurchase= document.getElementById('makePurchase');
+  if (totalPrice>0) {
+    makePurchase.classList.add('bg-green-400');
+    document.getElementById('modal').classList.toggle('hidden')
+  } else {
+    makePurchase.classList.add('bg-red-400');
+  }
+}
