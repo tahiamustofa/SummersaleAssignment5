@@ -69,15 +69,33 @@ function cooker(){
      discount.innerText = discountAmont.toFixed(2);
      const finalTotal= document.getElementById('finalTotal');
      finalTotal.innerText = (totalPrice - discountAmont).toFixed(2);
-    }
 
-    const makePurchase= document.getElementById('makePurchase');
+
+     const makePurchase= document.getElementById('makePurchase');
   if (totalPrice>0) {
+    // makePurchase.classList.remove('bg-red-400');
     makePurchase.classList.add('bg-green-400');
     
   } else {
+  //  makePurchase.classList.remove('bg-green-400');
     makePurchase.classList.add('bg-red-400');
   }
+
+  const applyBtn= document.getElementById('applyBtn');
+
+     if (totalPrice >= 200) {
+      // applyBtn.classList.remove('bg-red-500');
+      applyBtn.classList.add('bg-green-500');
+    } else {
+      // applyBtn.classList.remove('bg-green-500');
+      applyBtn.classList.add('bg-red-500');
+    }
+   
+    }
+
+    
+
+  
     
     
     function applyClick() {
@@ -97,12 +115,7 @@ function cooker(){
 
     }
 
-    if (totalPrice >= 200) {
-      applyBtn.classList.add('bg-green-500');
-    } else {
-      applyBtn.classList.add('bg-red-500');
-    }
-    UpdateDisplay();
+    
 
   
 
@@ -110,3 +123,5 @@ function toggleModal(){
   document.getElementById('modal').classList.toggle('hidden')
   
 }
+
+UpdateDisplay();
