@@ -70,6 +70,14 @@ function cooker(){
      const finalTotal= document.getElementById('finalTotal');
      finalTotal.innerText = (totalPrice - discountAmont).toFixed(2);
     }
+
+    const makePurchase= document.getElementById('makePurchase');
+  if (totalPrice>0) {
+    makePurchase.classList.add('bg-green-400');
+    
+  } else {
+    makePurchase.classList.add('bg-red-400');
+  }
     
     
     function applyClick() {
@@ -79,22 +87,26 @@ function cooker(){
 
       if (cupon === 'SELL200' && totalPrice >= 200) {
          discountAmont=totalPrice*0.20;
-        applyBtn.classList.add('bg-green-500');
+        
       } else {
         discountAmont=0;
-        applyBtn.classList.add('bg-red-500');
+       
         
       }
       UpdateDisplay();
 
     }
 
+    if (totalPrice >= 200) {
+      applyBtn.classList.add('bg-green-500');
+    } else {
+      applyBtn.classList.add('bg-red-500');
+    }
+    UpdateDisplay();
+
+  
+
 function toggleModal(){
-  const makePurchase= document.getElementById('makePurchase');
-  if (totalPrice>0) {
-    makePurchase.classList.add('bg-green-400');
-    document.getElementById('modal').classList.toggle('hidden')
-  } else {
-    makePurchase.classList.add('bg-red-400');
-  }
+  document.getElementById('modal').classList.toggle('hidden')
+  
 }
